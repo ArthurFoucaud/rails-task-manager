@@ -1,0 +1,11 @@
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+<%# <input type="checkbox"><p><%= @task.completed %>
+<div>
+    <input type="checkbox" <%= "checked" if @task.completed  %> >
+</div>
+<%= link_to "EDIT BATARD", task_edit_path(@task)%>
+<%= link_to "Back", tasks_path %>
+
+<%= link_to 'Delete this task',
+    task_path(@task), data: { turbo_method: 'DELETE', turbo_confirm: "t'es sûr mamène??" } %>
